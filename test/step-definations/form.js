@@ -25,3 +25,7 @@ When(/^click on login button$/, async()=>{
 Then(/^user is loggedin$/, async()=>{
     assert.isTrue(await $(`[class="subheader"]`).isExisting());
 });
+
+Then(/^user should view the (.+) button$/, async(button_name)=>{
+    assert.isTrue(await $(`//a/i[contains(text(), "${button_name}")]`).isExisting());
+});
